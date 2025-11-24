@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hi Anakia — Cute baby ko (5 pages)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fff7fb;
+      --panel:#ffffffcc;
+      --accent:#ff9ad3;
+      --accent-2:#ffd57a;
+      --muted:#8b8b8b;
+      --shadow: 0 6px 18px rgba(46,19,53,0.08);
+    }
+    html,body{height:100%;margin:0;font-family:Poppins,system-ui,Segoe UI,Arial; background:var(--bg);}
+    .bg-video{
+      position:fixed;inset:0;z-index:-1;overflow:hidden;
+    }
+    .bg-video video{width:100%;height:100%;object-fit:cover;filter:brightness(0.95) saturate(0.9);}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-family:Pacifico;font-size:20px;box-shadow:var(--shadow)}
+    nav a{margin:0 8px;text-decoration:none;color:#4b2b3b;font-weight:600}
+    main{display:grid;place-items:center;padding:40px 16px}
+    .card{width:360px;max-width:92vw;background:var(--panel);border-radius:18px;padding:26px 22px;box-shadow:var(--shadow);text-align:center}
+    h1{margin:6px 0 4px;font-size:22px;color:#2b0f22}
+    .subtitle{color:var(--muted);margin-bottom:18px}
+    .buttons{display:flex;gap:14px;justify-content:center;margin-top:10px}
+    .btn{padding:10px 18px;border-radius:10px;border:2px solid #d9d0d7;background:white;cursor:pointer;font-weight:700}
+    .btn.yes{background:linear-gradient(180deg,#fff 0%,#fff0 100%);border-color:#b47df1;color:#6330a1}
+    .btn.no{background:transparent;border-color:#ff9aa2;color:#d33b63;box-shadow:0 6px 0 rgba(211,59,99,0.06);}
+    .heart{font-size:42px;color:var(--accent);transform:translateY(2px)}
+    section{display:none;}
+    section.active{display:block}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .content-list{display:flex;flex-direction:column;gap:10px;text-align:left}
+    .card.small{width:320px;padding:18px}
+    .confetti{position:fixed;inset:auto 12px 12px auto;z-index:9}
+    @media(min-width:900px){main{padding-top:80px}}
+  </style>
+</head>
+<body>
+  <div class="bg-video" aria-hidden>
+    <video autoplay muted loop playsinline>
+      <source src="/mnt/data/0fb1a2e8af097a09ac760b853f3219f4.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <header>
+    <div class="brand">
+      <div class="logo">♡</div>
+      <div>
+        <div style="font-weight:700;color:#3b1133">Hi BABY KOOOOOOO</div>
+        <div style="font-size:12px;color:var(--muted)">a tiny cute conffession</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#question">Ask</a>
+      <a href="#yes">Yes</a>
+      <a href="#no">No</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="active page">
+      <div class="card">
+        <div style="font-family:Pacifico;color:#5a2450;font-size:28px">Hi BABY!</div>
+        <h1>Welcome to your cute quiz</h1>
+        <p class="subtitle">A little coffession — click start to begin</p>
+        <div class="buttons">
+          <button class="btn" onclick="goto('question')">Start</button>
+          <button class="btn" onclick="goto('about')">More</button>
+        </div>
+        <footer>Created with love MAHAL ko</footer>
+      </div>
+    </section>
+
+    <section id="question" class="page">
+      <div class="card">
+        <div style="font-size:13px;color:var(--muted)">gusto kita BABY will you be my girlfriend?</div>
+        <h1>please say yes po</h1>
+        <div class="buttons">
+          <button class="btn yes" onclick="onYes()">Yes</button>
+          <button class="btn no" onclick="onNo()">No</button>
+        </div>
+        <footer style="margin-top:14px">Tip: bawal ang no ;)</footer>
+      </div>
+    </section>
+
+    <section id="yes" class="page">
+      <div class="card">
+        <div style="font-size:48px;line-height:1">🎉</div>
+        <h1> YES! YEHEY I LOVE YOU SO MUCH MY BABY</h1>
+        <p class="subtitle">yieeeeeeee — send mo sakin toh if done 💌</p>
+        <div class="content-list">
+          <div class="card small">
+            <strong>Message idea</strong>
+            <p style="margin:8px 0 0;">HI BABY YES ANG SAGOT KO BABY PWEDE MO NA AKO IKISS</p>
+            <div style="display:flex;gap:8px;margin-top:10px;justify-content:flex-end">
+              <button class="btn" onclick="copyText('Hey! I’ve been wanting to ask you out — would you like to hang out this weekend?')">Copy</button>
+              <a class="btn" href="#question">Back</a>
+            </div>
+          </div>
+        </div>
+        <footer>You're SO BEAUTIFUL MY BABY 🌸</footer>
+      </div>
+    </section>
+
+    <section id="no" class="page">
+      <div class="card">
+        <div style="font-size:44px">💌</div>
+        <h1>abuhh bawal po itong sagot na ito</h1>
+        <p class="subtitle">balik ka sa home and say yes po :>.</p>
+        <div class="content-list">
+          <div class="card small">
+            <strong>Self-care tip</strong>
+            <p style="margin:8px 0 0;">mag yes ka kung gusto mo akong di mag tampo ng nuong buhay ko baby</p>
+            <div style="display:flex;gap:8px;margin-top:10px;justify-content:flex-end">
+              <a class="btn" href="#home">Home</a>
+              <a class="btn" href="#about">About</a>
+            </div>
+          </div>
+        </div>
+        <footer>Sending a hug 🤍</footer>
+      </div>
+    </section>
+
+    <section id="about" class="page">
+      <div class="card">
+        <div style="font-family:Pacifico;color:#5a2450;font-size:20px">Created by ISMA</div>
+        <h1>About this tiny app</h1>
+        <p class="subtitle">A cute interactive created by isma.</p>
+        <div style="text-align:left;margin-top:8px">
+          <ul>
+            <li>5 pages: Home, Question, Yes, No, About</li>
+            <li>FOR MY ANIKA ONLY</li>
+            <li>HEHEHEHEHEHEH</li>
+          </ul>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:10px;justify-content:center">
+          <a class="btn" href="#home">Go Home</a>
+          <a class="btn" href="#question">Ask</a>
+        </div>
+        <footer style="margin-top:12px">Made with ♡ LOVE</footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function show(id){
+      document.querySelectorAll('section.page').forEach(s=>s.classList.remove('active'));
+      const el = document.getElementById(id);
+      if(el) el.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function goto(id){
+      location.hash = id;
+    }
+    function handleHash(){
+      const id = location.hash.replace('#','') || 'home';
+      show(id);
+    }
+    window.addEventListener('hashchange', handleHash);
+    window.addEventListener('load', handleHash);
+
+    function onYes(){
+      burstConfetti();
+      setTimeout(()=>{goto('yes')},450);
+    }
+    function onNo(){
+      const card = document.querySelector('#question .card');
+      card.animate([{transform:'translateX(0)'},{transform:'translateX(-8px)'},{transform:'translateX(8px)'},{transform:'translateX(0)'},{duration:380}]);
+      setTimeout(()=>{goto('no')},420);
+    }
+    function copyText(text){
+      navigator.clipboard?.writeText(text).then(()=>{alert('Message copied to clipboard!');}).catch(()=>{alert('Could not copy — try selecting manually.')})
+    }
+    function burstConfetti(){
+      const container = document.createElement('div');
+      container.className='confetti';
+      document.body.appendChild(container);
+      const colors=['#ff9ad3','#ffd57a','#9be7ff','#b8f2e6','#c4b5ff'];
+      for(let i=0;i<12;i++){
+        const el=document.createElement('div');
+        el.style.width='10px';el.style.height='14px';el.style.position='absolute';el.style.right='16px';el.style.bottom='16px';el.style.background=colors[i%colors.length];el.style.opacity='0.95';el.style.transform='translateY(0) rotate('+ (Math.random()*360)+'deg)';el.style.borderRadius='2px';
+        el.animate([{transform:`translateY(0) rotate(0deg)`,opacity:1},{transform:`translateY(-420px) rotate(${Math.random()*720}deg)`,opacity:0}],{duration:1200+Math.random()*700,easing:'cubic-bezier(.2,.7,.1,1)'});
+        container.appendChild(el);
+      }
+      setTimeout(()=>container.remove(),1900);
+    }
+  </script>
+</body>
+</html>
